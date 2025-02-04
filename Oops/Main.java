@@ -58,6 +58,11 @@ class FuelTanker extends Thread {
     public void run() {
         System.out.println("Fuel tanker is refueling " + rocket.name);
         rocket.refuel(50); // Refuel with 50% fuel
+        try {
+            Thread.sleep(1000);
+        } catch (Exception e) {
+            System.out.println("Exception occured");
+        }
     }
 }
 
@@ -92,6 +97,7 @@ public class Main {
 
         tanker1.start();
         tanker2.start();
+        //tanker1.wait();
 
         try {
             tanker1.join();
