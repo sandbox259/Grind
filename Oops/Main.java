@@ -72,6 +72,7 @@ class MissionThread extends Thread {
     MissionThread(Rocket rocket) {
         this.rocket = rocket;
     }
+    
 
     @Override
     public void run() {
@@ -88,6 +89,7 @@ public class Main {
 
         MissionThread mission1 = new MissionThread(rocket1);
         MissionThread mission2 = new MissionThread(rocket2);
+
 
         FuelTanker tanker1 = new FuelTanker(rocket1);
         FuelTanker tanker2 = new FuelTanker(rocket2);

@@ -23,7 +23,7 @@ class Tab implements Runnable {
     private String s;
 
     public Tab(String name) {
-            this.s  = name;//TODO Auto-generated constructor stub
+            this.s  = name;
         }
     
         public void Runner(String chars) {
@@ -34,7 +34,7 @@ class Tab implements Runnable {
         public void run(){
     
             try {
-                Thread.sleep(1000); // Simulate browsing time before closing
+                Thread.sleep(100); // Simulate browsing time before closing
             } catch (InterruptedException e) {
                 System.out.println("Error: " + e.getMessage());
             }
@@ -55,9 +55,19 @@ class Tab implements Runnable {
         Browser b2 = new Browser();
         b2.setName("Netflix");
         b2.open();
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
         Thread t2 = new Thread(new Tab(b2.getName()));
         b1.open();
         t2.start();
+        Browser b3 = new Browser();
+        b3.setName("Facebook");
+        Thread t3 = new Thread(new Tab(b3.getName()));
+        t3.start();
+        
         
     }
     
