@@ -1,4 +1,5 @@
 package Hashing;
+
 import java.util.Hashtable;
 import java.util.concurrent.*;
 
@@ -41,7 +42,7 @@ public class MapPerformanceTest {
         int numThreads = 10;
         int numTasks = 1000;
         ExecutorService executor = Executors.newFixedThreadPool(numThreads);
-        
+
         // Hashtable Performance Test
         Hashtable<Integer, Integer> hashtable = new Hashtable<>();
         long startTime = System.nanoTime();
@@ -52,10 +53,10 @@ public class MapPerformanceTest {
         executor.awaitTermination(1, TimeUnit.MINUTES);
         long endTime = System.nanoTime();
         System.out.println("Hashtable Execution Time: " + (endTime - startTime) / 1e6 + " ms");
-        
+
         // Reset Executor
         executor = Executors.newFixedThreadPool(numThreads);
-        
+
         // ConcurrentHashMap Performance Test
         ConcurrentHashMap<Integer, Integer> concurrentHashMap = new ConcurrentHashMap<>();
         startTime = System.nanoTime();
