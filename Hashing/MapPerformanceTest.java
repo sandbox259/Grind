@@ -31,7 +31,7 @@ class ConcurrentHashMapTask implements Runnable {
 
     @Override
     public void run() {
-        map.put(key, key * 10);
+        map.put(key, key * 5);
         map.get(key);
         map.remove(key);
     }
