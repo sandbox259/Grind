@@ -32,7 +32,7 @@ class Employee implements Comparable<Employee> {
         employees[3] = new Employee("Bhavesh", 40, 1000);
         Arrays.sort(employees);
 
-        System.out.println("After sorting: " + Arrays.toString(employees));
+        System.out.println("After sorting employees: " + Arrays.toString(employees));
 
     }
 
