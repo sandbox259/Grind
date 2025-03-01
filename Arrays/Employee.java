@@ -29,7 +29,7 @@ class Employee implements Comparable<Employee> {
         employees[0] = new Employee("Suresh", 45, 5000);
         employees[1] = new Employee("Ramesh", 62, 10000);
         employees[2] = new Employee("Lokesh", 23, 4000);
-        employees[3] = new Employee("Bhavesh", 40, 1000);
+        employees[3] = new Employee("Bhavesh", 40, 10000);
         Arrays.sort(employees);
 
         System.out.println("After sorting employees: " + Arrays.toString(employees));
