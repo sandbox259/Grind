@@ -16,7 +16,7 @@ class ServiceThread implements Runnable {
         for (int i = 0; i < 5; i++) {
             int key = threadId * 10 + i;
             map.put(key, "Value" + key);
-            System.out.println("Thread " + threadId + " inserted: " + key);
+            System.out.println("Thread " + threadId + " inserted:  " + key);
 
             String value = map.get(key);
             System.out.println("Thread " + threadId + " retrieved: " + key + " -> " + value);
