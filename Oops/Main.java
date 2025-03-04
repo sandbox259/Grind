@@ -59,7 +59,7 @@ class FuelTanker extends Thread {
         System.out.println("Fuel tanker is refueling " + rocket.name);
         rocket.refuel(50); // Refuel with 50% fuel
         try {
-            Thread.sleep(1000);
+            Thread.sleep(100);
         } catch (Exception e) {
             System.out.println("Exception occured");
         }
@@ -72,7 +72,6 @@ class MissionThread extends Thread {
     MissionThread(Rocket rocket) {
         this.rocket = rocket;
     }
-    
 
     @Override
     public void run() {
@@ -90,7 +89,6 @@ public class Main {
         MissionThread mission1 = new MissionThread(rocket1);
         MissionThread mission2 = new MissionThread(rocket2);
 
-
         FuelTanker tanker1 = new FuelTanker(rocket1);
         FuelTanker tanker2 = new FuelTanker(rocket2);
 
@@ -99,7 +97,7 @@ public class Main {
 
         tanker1.start();
         tanker2.start();
-        //tanker1.wait();
+        // tanker1.wait();
 
         try {
             tanker1.join();
@@ -120,5 +118,6 @@ public class Main {
 
         rocket1.outplanet();
         rocket2.outplanet();
+
     }
 }
